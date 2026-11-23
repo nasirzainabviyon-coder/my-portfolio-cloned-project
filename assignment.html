@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Sunday's Laundry Spot</title>
+
+    <link rel="stylesheet" href="assignment.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <header class="top-header">
+      <div class="brand-area">
+        <div class="brand-logo">
+          <img src="sudaylogo.svg" alt="Laundry logo" />
+        </div>
+
+        <div class="brand-info">
+          <h2>Sunday's Laundry Spot</h2>
+          <p>CLEANER CLOTHES, BETTER LIVING</p>
+        </div>
+      </div>
+
+      <nav
+        class="navigation"
+        id="header-navigation"
+        aria-label="menu navigation"
+      >
+        <a href="#services">Services</a>
+        <a href="#prices">Prices</a>
+        <a href="#">How it works</a>
+        <a href="#">Questions</a>
+        <a href="#">Complaints</a>
+      </nav>
+
+      <div class="header-options">
+        <button class="install-btn">
+          <i data-lucide="download"></i>
+
+          <span>
+            Install
+            <br />
+            app
+          </span>
+        </button>
+
+        <div class="language-area">
+          <i class="fa-solid fa-language"></i>
+
+          <button class="active-language">English</button>
+          <button>Pidgin</button>
+        </div>
+
+        <a href="#" class="login-link">Log in</a>
+        <button class="pickup-btn">Book a pickup</button>
+      </div>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="header-navigation"
+      >
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </header>
+    <span id="booking" class="section-anchor" aria-hidden="true"></span>
+    <span id="prices" class="section-anchor" aria-hidden="true"></span>
+    <section class="hero" id="services">
+      <div class="hero-copy">
+        <div class="location">
+          <span class="pin">⌖</span> Ajegunle • Tolu • Ajeromi-Ifelodun
+        </div>
+        <h1>Clean clothes,<br /><span>no stress.</span></h1>
+        <p class="intro">
+          We wash, iron and pack your clothes. We can pick them up from your
+          house and bring them back. You relax.
+        </p>
+        <div class="cta-row">
+          <a class="button button-primary" href="#booking"
+            >Book a pickup <span aria-hidden="true">→</span></a
+          >
+          <a class="button button-outline" href="#prices">See our prices</a>
+        </div>
+      </div>
+
+      <div class="visual" aria-label="Laundry machines and pickup updates">
+        <div class="photo-frame">
+          <img
+            src="https://sunday-laundry-spot.vercel.app/images/stock/hero.jpg"
+            alt="Modern washing machines in a clean laundromat"
+          />
+        </div>
+        <div class="notice ready">
+          <span class="notice-icon">✓</span>
+          <span
+            ><strong>Your clothes are ready!</strong
+            ><small>Ready for pickup</small></span
+          >
+        </div>
+        <div class="notice pickup">
+          <span class="notice-icon">♧</span>
+          <span
+            ><strong>Pickup booked</strong
+            ><small>Today, 10am – 12pm</small></span
+          >
+        </div>
+      </div>
+    </section>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+      lucide.createIcons();
+
+      const menuToggle = document.querySelector(".menu-toggle");
+      const navigation = document.querySelector(".navigation");
+
+      menuToggle.addEventListener("click", () => {
+        const isOpen = navigation.classList.toggle("open");
+        menuToggle.setAttribute("aria-expanded", String(isOpen));
+        menuToggle.setAttribute(
+          "aria-label",
+          isOpen ? "Close menu" : "Open menu",
+        );
+        menuToggle.querySelector("i").className = isOpen
+          ? "fa-solid fa-xmark"
+          : "fa-solid fa-bars";
+      });
+
+      window.addEventListener("resize", () => {
+        if (window.innerWidth > 900) {
+          navigation.classList.remove("open");
+          menuToggle.setAttribute("aria-expanded", "false");
+          menuToggle.setAttribute("aria-label", "Open menu");
+          menuToggle.querySelector("i").className = "fa-solid fa-bars";
+        }
+      });
+    </script>
+  </body>
+</html>
