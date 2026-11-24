@@ -3,11 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <title>Sunday's Laundry Spot</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="assignment.css" />
-
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -20,7 +24,6 @@
         <div class="brand-logo">
           <img src="sudaylogo.svg" alt="Laundry logo" />
         </div>
-
         <div class="brand-info">
           <h2>Sunday's Laundry Spot</h2>
           <p>CLEANER CLOTHES, BETTER LIVING</p>
@@ -30,35 +33,27 @@
       <nav
         class="navigation"
         id="header-navigation"
-        aria-label="menu navigation"
+        aria-label="Main navigation"
       >
         <a href="#services">Services</a>
         <a href="#prices">Prices</a>
-        <a href="#">How it works</a>
+        <a href="#benefits">How it works</a>
         <a href="#">Questions</a>
         <a href="#">Complaints</a>
       </nav>
 
       <div class="header-options">
-        <button class="install-btn">
-          <i data-lucide="download"></i>
-
-          <span>
-            Install
-            <br />
-            app
-          </span>
+        <button class="install-btn" type="button">
+          <i data-lucide="download" aria-hidden="true"></i>
+          <span>Install<br />app</span>
         </button>
-
         <div class="language-area">
-          <i class="fa-solid fa-language"></i>
-
-          <button class="active-language">English</button>
-          <button>Pidgin</button>
+          <i class="fa-solid fa-language" aria-hidden="true"></i>
+          <button class="active-language" type="button">English</button>
+          <button type="button">Pidgin</button>
         </div>
-
         <a href="#" class="login-link">Log in</a>
-        <button class="pickup-btn">Book a pickup</button>
+        <a class="pickup-btn" href="#booking">Book a pickup</a>
       </div>
 
       <button
@@ -68,52 +63,100 @@
         aria-expanded="false"
         aria-controls="header-navigation"
       >
-        <i class="fa-solid fa-bars"></i>
+        <i class="fa-solid fa-bars" aria-hidden="true"></i>
       </button>
     </header>
-    <span id="booking" class="section-anchor" aria-hidden="true"></span>
-    <span id="prices" class="section-anchor" aria-hidden="true"></span>
-    <section class="hero" id="services">
-      <div class="hero-copy">
+
+    <main class="hero" id="services">
+      <section class="hero-copy" aria-labelledby="hero-title">
         <div class="location">
-          <span class="pin">⌖</span> Ajegunle • Tolu • Ajeromi-Ifelodun
+          <span class="pin" aria-hidden="true">⌖</span>
+          <span>Ajegunle • Tolu • Ajeromi-Ifelodun</span>
         </div>
-        <h1>Clean clothes,<br /><span>no stress.</span></h1>
+        <h1 id="hero-title">Clean clothes,<br /><span>no stress.</span></h1>
         <p class="intro">
           We wash, iron and pack your clothes. We can pick them up from your
           house and bring them back. You relax.
         </p>
+
         <div class="cta-row">
-          <a class="button button-primary" href="#booking"
-            >Book a pickup <span aria-hidden="true">→</span></a
-          >
+          <a class="button button-primary" href="#booking">
+            Book a pickup
+            <i data-lucide="arrow-right" aria-hidden="true"></i>
+          </a>
           <a class="button button-outline" href="#prices">See our prices</a>
         </div>
-      </div>
 
-      <div class="visual" aria-label="Laundry machines and pickup updates">
+        <ul
+          class="benefits"
+          id="benefits"
+          aria-label="Laundry service benefits"
+        >
+          <li class="benefit-item benefit-ready">
+            <i data-lucide="circle-check" aria-hidden="true"></i>
+            <span>Ready in 4 days</span>
+          </li>
+          <li class="benefit-item benefit-express">
+            <i data-lucide="zap" aria-hidden="true"></i>
+            <span>Express in 24 hours</span>
+          </li>
+          <li class="benefit-item benefit-payment">
+            <i data-lucide="shield-check" aria-hidden="true"></i>
+            <span>Pay online or cash</span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="visual" aria-label="Laundry service updates">
+        <div class="photo-backdrop" aria-hidden="true"></div>
         <div class="photo-frame">
           <img
             src="https://sunday-laundry-spot.vercel.app/images/stock/hero.jpg"
-            alt="Modern washing machines in a clean laundromat"
+            alt="Rows of modern washing machines in a laundromat"
           />
         </div>
-        <div class="notice ready">
-          <span class="notice-icon">✓</span>
-          <span
-            ><strong>Your clothes are ready!</strong
-            ><small>Ready for pickup</small></span
-          >
+
+        <div class="notice notice-ready">
+          <span class="notice-icon">
+            <i data-lucide="circle-check" aria-hidden="true"></i>
+          </span>
+          <span class="notice-copy">
+            <strong>Your clothes are ready!</strong>
+            <small>Ready for pickup</small>
+          </span>
         </div>
-        <div class="notice pickup">
-          <span class="notice-icon">♧</span>
-          <span
-            ><strong>Pickup booked</strong
-            ><small>Today, 10am – 12pm</small></span
-          >
+
+        <div class="notice notice-pickup">
+          <span class="notice-icon">
+            <i data-lucide="truck" aria-hidden="true"></i>
+          </span>
+          <span class="notice-copy">
+            <strong>Pickup booked</strong>
+            <small>Today, 10am – 12pm</small>
+          </span>
         </div>
-      </div>
-    </section>
+
+        <div class="washed-card">
+          <span class="shirt-icon">
+            <i data-lucide="shirt" aria-hidden="true"></i>
+          </span>
+          <span class="washed-copy">
+            <strong>Washed &amp; ironed</strong>
+            <span class="stars" role="img" aria-label="5 out of 5 stars">
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+            </span>
+          </span>
+        </div>
+      </section>
+    </main>
+
+    <span id="booking" class="section-anchor" aria-hidden="true"></span>
+    <span id="prices" class="section-anchor" aria-hidden="true"></span>
+
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>
       lucide.createIcons();
